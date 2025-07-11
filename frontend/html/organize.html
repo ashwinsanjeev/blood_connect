@@ -1,0 +1,56 @@
+<!-- organize.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor Connect</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <div id="message-box" class="message-box hidden"></div>
+  <nav class="navbar">
+    <h1>Blood Donor Connect</h1>
+    <div class="page-links">
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="search.html">Search</a>
+        <a href="request.html">Request</a>
+        <a href="organize.html" class="active">Organize Camp</a>
+    </div>
+    <!-- <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="request.html">Need Blood?</a></li>
+        <li><a href="search.html">Search Donor</a></li>
+        <li><a href="organize.html">Organize Camp</a></li>
+    </ul> -->
+  </nav>
+  <main>
+    <section>
+      <h2>Organize a Blood Donation Camp</h2>
+      <form id="organize-form">
+        <label for="event-name">Event Name:</label>
+        <input type="text" id="event-name" required>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" required>
+
+        <label for="location">City:</label>
+        <select id="location" required>
+          <option value="">Select</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Tirupur">Tirupur</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Erode">Erode</option>
+          <option value="Selam">Selam</option>
+        </select>
+
+        <button type="button" onclick="campRequest()">Create Event</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #ff4b4b;
+    padding: 1em;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.buttons {
+    display: block;
+    gap: 1em;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    width: 300px;
+    }
+
+button {
+    padding: 0.5em 1em;
+    background-color: #005f99;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 30px;
+}
+
+button:hover {
+    background-color: #004080;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+input, select {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #ff4b4b;
+    color: white;
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+tr:hover {
+    background-color: #ddd;
+}
+
+
+
+.page-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75em;
+  /* justify-content: center; */
+  margin: 0;
+  max-width: 800px;
+}
+
+.page-links a {
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #005f99 ;
+  color: white; /* Tailwind's blue-700 */
+  border: px solid #1d4ed8;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.page-links a:hover {
+  background-color: white;
+  color: #005f99;
+  box-shadow: 0 0 5px rgba(0, 95, 153, 0.3);
+  text-decoration: none;
+}
+
+.page-links a.active {
+  background-color: white;
+  color: #005f99;
+  border-color: white;
+  /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); */
+  pointer-events: none; /* Optional: prevents clicking on current page link */
+}
+
+
+.message-box {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #b3222e;; /* default red (error) */
+  color: #ffffff;
+  /* border: 1px solid #a1575f; */
+  padding: 1em 1em;
+  border-radius: 3px;
+  /* font-weight: bold; */
+  z-index: 1000;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+}
+
+.message-box.success {
+  background-color: #d4edda;
+  color: #0c3a17;
+  border-color: #c3e6cb;
+}
+
+.message-box.show {
+  top: 30px;
+  opacity: 1;
+}
+
+
+/* ====================
+   Auth Form Container
+==================== */
+
+.form-container {
+    max-width: 400px;
+    background-color: white;
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: #ff4b4b;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 0.75em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 1em;
+    background-color: #005f99;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #004080;
+}
+
+.form-container .error {
+    color: red;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Auth-specific mobile tweaks */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 1.5em 1em;
+        margin: 1em;
+    }
+
+    .form-container input,
+    .form-container button {
+        font-size: 1em;
+    }
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 0.95em;
+}
+
+.auth-link a {
+  color: #005f99;
+  text-decoration: underline;
+}
+
+.auth-link a:hover {
+  color: #004080;
+}
+
+
+
+
+/* ========== Responsive Design ========== */
+
+/* Small Screens: Mobile */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 1em;
+    }
+
+    .buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        padding: 15px 20px;
+        width: 90%;
+        font-size: 1em;
+    }
+
+    form {
+        padding: 1em;
+    }
+
+    input, select {
+        width: 100%;
+    }
+
+    table {
+        font-size: 0.9em;
+        overflow-x: auto;
+        display: block;
+    }
+}
+
+/* Medium Screens: Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+    .buttons {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        padding: 1em 2em;
+        margin: 10px;
+    }
+
+    input, select {
+        width: 100%;
+    }
+}

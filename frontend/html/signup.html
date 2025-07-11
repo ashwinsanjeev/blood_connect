@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup - Blood Donor</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <main>
+  <div id="message-box" class="message-box hidden"></div>
+  <div class="form-container">
+    <h2>Signup</h2>
+    <form id="signupForm">
+      <input type="text" id="signup-username" name="username" placeholder="Username" required />
+      <input type="email" id="signup-email" name="email" placeholder="Email" required />
+      <input type="password" id="signup-password" name="password" placeholder="Password" required />
+      <input type="password" id="signup-confirm-password" name="confirmPassword" placeholder="Confirm Password" required />
+      <button type="button" onclick="handleSignup()">Signup</button>
+      <div class="error" id="errorMsg"></div>
+    </form>
+    <p class="auth-link" style="text-align: center; margin-top: 1em;">
+  Already have an account?
+  <a href="/login.html" style="color: #005f99; text-decoration: underline;">Login</a>
+</p>
+
+  </div>
+</main>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const password = form.password.value;
+      const confirmPassword = form.confirmPassword.value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      const userData = {
+        username: form.username.value,
+        email: form.email.value,
+        password
+      };
+
+      const res = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData)
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      if (res.ok) window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>
