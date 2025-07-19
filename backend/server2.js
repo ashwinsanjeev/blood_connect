@@ -3,10 +3,10 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const {registerDonor,findDonors}=require('./models/Donor2');
-const {createBloodRequest}=require('./models/BloodRequest2');
-const {createCampRequest}=require('./models/campRequest2');
-const {registerUser, isEmailTaken, findUserByEmail} = require('./models/authQueries');
+const {registerDonor,findDonors}=require('./models/donorModels');
+const {createBloodRequest}=require('./models/bloodRequestModels');
+const {createCampRequest}=require('./models/campRequestModels');
+const {registerUser, isEmailTaken, findUserByEmail} = require('./models/userAuthModels');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 

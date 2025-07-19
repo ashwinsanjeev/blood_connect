@@ -1,4 +1,4 @@
-const client=require('../db2');
+const client=require('../db');
 
 async function registerDonor(data){
     const{name, bloodgroup, email, contact, city}=data;

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blood Donor Connect</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <script src="../js/script.js" defer></script>
+  <script src="../js/searchDonor.js" defer></script>
+  <script src="../js/ui.js" defer></script>
+  <script src="../js/auth.js" defer></script>
 </head>
 <body>
   <div id="message-box" class="message-box hidden"></div>
@@ -18,14 +20,9 @@
         <a href="search.html" class="active">Search</a>
         <a href="request.html">Request</a>
         <a href="organize.html">Organize Camp</a>
+        <a href="login.html">Log in</a>
+        <button id="logoutBtn" class="nav-button hidden" onclick="handleLogout()">Logout</button>
     </div>
-    <!-- <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="request.html">Need Blood?</a></li>
-        <li><a href="search.html">Search Donor</a></li>
-        <li><a href="organize.html">Organize Camp</a></li>
-    </ul> -->
   </nav>
   <main>
     <section>

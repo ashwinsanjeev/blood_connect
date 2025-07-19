@@ -346,3 +346,36 @@ async function searchDonors() {
     }
 }
 
+// Call this on every page load to toggle visibility
+function checkAuth() {
+  const token = localStorage.getItem('token');
+  const logoutBtn = document.getElementById('logoutBtn');
+  const loginLink = document.querySelector('a[href="login.html"]');
+  const signupLink = document.querySelector('a[href="signup.html"]');
+
+  if (token) {
+    // User is logged in
+    logoutBtn?.classList.remove('hidden');
+    loginLink?.classList.add('hidden');
+    signupLink?.classList.add('hidden');
+  } else {
+    // User is not logged in
+    logoutBtn?.classList.add('hidden');
+    loginLink?.classList.remove('hidden');
+    signupLink?.classList.remove('hidden');
+  }
+}
+
+// Clears token and redirects to home/login
+function handleLogout() {
+    console.log('Logout clicked');
+    localStorage.removeItem('token');
+    showMessage('Logged out successfully', 'success');
+    setTimeout(() => {
+        // You can choose to redirect to login or home
+        window.location.href = 'login.html';
+    }, 1000);
+}
+
+// Run on initial page load
+document.addEventListener('DOMContentLoaded', checkAuth);

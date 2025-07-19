@@ -1,4 +1,4 @@
-const client=require('../db2');
+const client=require('../db');
 
 async function createCampRequest(data){
     const{campname, date, city}=data;
