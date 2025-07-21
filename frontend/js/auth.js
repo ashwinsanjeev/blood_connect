@@ -83,22 +83,49 @@ async function handleLogin() {
     }
 }
 
+
+function parseJwt(token) {
+  try {
+    const base64Payload = token.split('.')[1];
+    const payload = atob(base64Payload);
+    return JSON.parse(payload);
+  } catch (e) {
+    console.error('Invalid token', e);
+    return null;
+  }
+}
+
+const user = parseJwt(localStorage.getItem('token'));
+console.log(user);
+
 function checkAuth() {
   const token = localStorage.getItem('token');
   const logoutBtn = document.getElementById('logoutBtn');
   const loginLink = document.querySelector('a[href="login.html"]');
   const signupLink = document.querySelector('a[href="signup.html"]');
+  const organizeLink = document.getElementById('organizeCampLink'); // Add id to your nav link/button
 
   if (token) {
+    const user = parseJwt(token);
     // User is logged in
     logoutBtn?.classList.remove('hidden');
     loginLink?.classList.add('hidden');
     signupLink?.classList.add('hidden');
+
+    if (user?.isAdmin) {
+      if (organizeLink) organizeLink.href = 'adminCampOrganize.html';
+    } else {
+      if (organizeLink) organizeLink.href = 'organize.html';
+    }
+
   } else {
     // User is not logged in
     logoutBtn?.classList.add('hidden');
     loginLink?.classList.remove('hidden');
     signupLink?.classList.remove('hidden');
+
+    if (organizeLink) organizeLink.href = 'organize.html';
+
   }
 }
 

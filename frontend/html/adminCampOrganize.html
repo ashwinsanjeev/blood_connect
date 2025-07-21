@@ -1,11 +1,8 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blood Donor Connect</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/adminCamp.js" defer></script>
   <script src="../js/ui.js" defer></script>
   <script src="../js/auth.js" defer></script>
 </head>
@@ -22,23 +19,15 @@
       <a href="login.html">Log in</a>
       <button id="logoutBtn" class="nav-button hidden" onclick="handleLogout()">Logout</button>
     </div>
-
-    <!-- <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="request.html">Need Blood?</a></li>
-      <li><a href="search.html">Search Donor</a></li>
-      <li><a href="organize.html">Organize Camp</a></li>
-    </ul> -->
   </nav>
+  <h1>Pending Requests</h1>
 
-  <main>
-    <center>
-      <section>
-        <h2>Welcome to Blood Donor Connect</h2>
-        <p>Connecting blood donors with those in need.</p>
-      </section>
-    </center>
+    <table id="pending-camps">
+      <thead>
+        <tr><th>ID</th><th>Event</th><th>Date</th><th>City</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </main>
 </body>
 </html>

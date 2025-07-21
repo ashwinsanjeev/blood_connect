@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blood Donor Connect</title>
   <link rel="stylesheet" href="../css/styles.css">
-  <script src="../js/script.js" defer></script>
+  <script src="../js/campRequest.js" defer></script>
   <script src="../js/ui.js" defer></script>
   <script src="../js/auth.js" defer></script>
 </head>
@@ -19,7 +19,7 @@
         <a href="register.html">Register</a>
         <a href="search.html">Search</a>
         <a href="request.html">Request</a>
-        <a href="organize.html" class="active">Organize Camp</a>
+        <a id="organizeCampLink" href="organize.html" class="active">Organize Camp</a>
         <a href="login.html">Log in</a>
         <button id="logoutBtn" class="nav-button hidden" onclick="handleLogout()">Logout</button>
     </div>
@@ -52,7 +52,7 @@
           <option value="Selam">Selam</option>
         </select>
 
-        <button type="button" onclick="campRequest()">Create Event</button>
+        <button type="button" onclick="campRequest()">Request Event</button>
       </form>
     </section>
   </main>
