@@ -12,17 +12,22 @@
 </head>
 <body>
   <div id="message-box" class="message-box hidden"></div>
-  <nav class="navbar">
-    <h1>Blood Donor Connect</h1>
-    <div class="page-links">
+    <nav class="navbar">
+      <div class="nav-header">
+        <h1>Blood Donor Connect</h1>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </div>
+      <div id="sideMenu" class="side-menu">
         <a href="index.html">Home</a>
         <a href="register.html">Register</a>
         <a href="search.html">Search</a>
         <a href="request.html" class="active">Request</a>
         <a id="organizeCampLink" href="organize.html">Organize Camp</a>
-        <a href="login.html">Log in</a>
-        <button id="logoutBtn" class="nav-button hidden" onclick="handleLogout()">Logout</button>
-    </div>
+        <div class="profile-dropdown" id="profileDropdown">
+          <a class="avatar" onclick="toggleProfileMenu()">Profile</a>
+            <div class="dropdown-content hidden" id="profileMenu"></div>
+        </div>
+      </div>
     <!-- <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="register.html">Register</a></li>

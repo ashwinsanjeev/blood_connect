@@ -7,6 +7,11 @@ async function searchDonors() {
         return;
     }
     
+    const token = localStorage.getItem('token');
+    if (!token) {
+        showMessage('Please log in to Search Donors.', 'error');
+        return;
+    }
 
     try {
         // Send query to backend

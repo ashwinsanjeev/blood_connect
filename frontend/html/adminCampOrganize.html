@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Blood Donor Connect</title>
   <link rel="stylesheet" href="../css/styles.css">
   <script src="../js/adminCamp.js" defer></script>
   <script src="../js/ui.js" defer></script>
@@ -11,13 +12,16 @@
   <nav class="navbar">
     <h1>Blood Donor Connect</h1>
     <div class="page-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="register.html">Register</a>
       <a href="search.html">Search</a>
       <a href="request.html">Request</a>
-      <a id="organizeCampLink" href="organize.html">Organize Camp</a>
+      <a id="organizeCampLink" href="organize.html" class="active">Organize Camp</a>
       <a href="login.html">Log in</a>
-      <button id="logoutBtn" class="nav-button hidden" onclick="handleLogout()">Logout</button>
+      <div class="profile-dropdown" id="profileDropdown">
+        <a class="avatar" onclick="toggleProfileMenu()">Profile</a>
+          <div class="dropdown-content hidden" id="profileMenu"></div>
+      </div>
     </div>
   </nav>
   <h1>Pending Requests</h1>

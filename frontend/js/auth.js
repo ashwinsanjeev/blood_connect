@@ -8,7 +8,6 @@ async function handleSignup() {
 
     function validateSignup(data) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
         if (!data.username) return 'Username is required.';
         if (!emailPattern.test(data.email)) return 'Invalid email address.';
         if (data.password.length < 6) return 'Password must be at least 6 characters.';
@@ -129,16 +128,41 @@ function checkAuth() {
   }
 }
 
-// Clears token and redirects to home/login
-function handleLogout() {
-    console.log('Logout clicked');
-    localStorage.removeItem('token');
-    showMessage('Logged out successfully', 'success');
-    setTimeout(() => {
-        // You can choose to redirect to login or home
-        window.location.href = 'login.html';
-    }, 1000);
+function toggleProfileMenu() {
+  document.getElementById('profileMenu').classList.toggle('hidden');
 }
+
+function updateProfileMenu() {
+  const token = localStorage.getItem('token');
+  const profileMenu = document.getElementById('profileMenu');
+
+  if (token) {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    profileMenu.innerHTML = `
+      <p>${payload.name || payload.email}</p>
+      <button onclick="handleLogout()">Logout</button>
+    `;
+  } else {
+    profileMenu.innerHTML = `
+      <button onclick="location.href='login.html'">Login</button>
+    `;
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem('token');
+  window.location.href = 'login.html';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateProfileMenu();
+    const organizeLink = document.getElementById('organizeCampLink');
+    if (organizeLink && isAdminUser()) {
+        organizeLink.textContent = 'Admin Camp Manager';
+        organizeLink.href = 'adminCampOrganize.html'; // redirect admin to admin-specific page
+    }
+});
+
 
 // Run on initial page load
 document.addEventListener('DOMContentLoaded', checkAuth);

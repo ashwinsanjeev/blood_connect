@@ -6,6 +6,12 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 }
 
+
+function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    menu.classList.toggle('show');
+  }
+
 function showMessage(message, type = 'error') {
   const box = document.getElementById('message-box');
   box.textContent = message;

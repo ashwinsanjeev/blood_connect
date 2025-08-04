@@ -25,6 +25,12 @@ async function registerDonor() {
         showMessage(errorMessage);
         return;
     }
+
+    const token = localStorage.getItem('token');
+    if (!token) {
+        showMessage('Please log in to Register as a Donor.', 'error');
+        return;
+    }
     try {
         // Send data to the backend
         const response = await fetch('http://localhost:5000/api/donors', {

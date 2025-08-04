@@ -37,6 +37,12 @@ async function bloodRequest() {
         return;
     }
 
+    const token = localStorage.getItem('token');
+    if (!token) {
+        showMessage('Please log in to request for blood.', 'error');
+        return;
+    }
+
     try {
         // Show loading
         requestButton.disabled = true;

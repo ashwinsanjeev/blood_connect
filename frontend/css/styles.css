@@ -32,6 +32,7 @@ body {
 
 .navbar a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Main Content */
@@ -205,6 +206,142 @@ tr:hover {
     border-color: white;
     /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); */
 }
+
+
+.profile-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-color: #ffffff;
+  transition: border-color 0.3s ease;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 90%;
+  height: 90%;
+  filter: invert(93%) sepia(100%) saturate(28%) hue-rotate(124deg) brightness(106%) contrast(108%);
+  object-fit: cover;
+  display: block;
+}
+.avatar:hover {
+    filter: invert(19%) sepia(33%) saturate(7271%) hue-rotate(188deg) brightness(57%) contrast(100%);
+} */
+
+.dropdown-content {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  min-width: 150px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  padding: 10px;
+}
+
+.dropdown-content p {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 0.9em;
+  background-color: #005f99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color: #004080;
+}
+
+
+
+.navbar {
+  background-color: #e74c3c;
+  padding: 10px;
+  color: white;
+  position: relative;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Side menu hidden by default */
+.side-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .side-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: none;
+    z-index: 999;
+  }
+
+  .side-menu.show {
+    display: flex;
+  }
+
+  .side-menu a,
+  .side-menu button {
+    color: #e74c3c;
+    padding: 10px 0;
+    text-decoration: none;
+    border: none;
+    background: none;
+    text-align: left;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
 
 
 
