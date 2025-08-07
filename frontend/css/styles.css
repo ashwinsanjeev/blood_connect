@@ -286,6 +286,7 @@ tr:hover {
 }
 
 .hamburger {
+  margin-left: 130px;
   font-size: 26px;
   cursor: pointer;
   display: none;
