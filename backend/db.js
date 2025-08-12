@@ -1,11 +1,13 @@
 const {Client}=require('pg');
+require('dotenv').config();
+
 
 const client=new Client({
-    host: 'localhost',
-    user: 'postgres',
-    port: 5432,
-    password: '0311',
-    database: 'blood_donor_connect'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'postgres',
+    port: process.env.DB_PORT || 5432,
+    password: process.env.DB_PASSWORD || '0311',
+    database: process.env.DB_NAME || 'blood_donor_connect'
 })
 
 client.connect()
