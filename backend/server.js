@@ -10,7 +10,11 @@ const campRequestRoutes = require('./routes/campRequestRoutes');
 const adminCampRoutes = require('./routes/adminCampRoutes');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://52.66.132.71:5050', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(bodyParser.json());
 
 // Mount route handlers
