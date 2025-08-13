@@ -15,7 +15,7 @@ async function searchDonors() {
 
     try {
         // Send query to backend
-        const response = await fetch(`http://localhost:5000/api/donors?bloodgroup=${bloodgroup}&city=${city}`);
+        const response = await fetch(`http://52.66.132.71:5050/api/donors?bloodgroup=${bloodgroup}&city=${city}`);
         
         if (!response.ok) {
             throw new Error('Failed to fetch donor data');

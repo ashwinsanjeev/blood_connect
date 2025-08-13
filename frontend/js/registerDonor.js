@@ -33,7 +33,7 @@ async function registerDonor() {
     }
     try {
         // Send data to the backend
-        const response = await fetch('http://localhost:5000/api/donors', {
+        const response = await fetch('http://52.66.132.71:5050/api/donors', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(donorData),

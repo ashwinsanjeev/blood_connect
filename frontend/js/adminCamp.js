@@ -1,7 +1,5 @@
-const API_BASE = 'http://localhost:3000/api/admin/camp-requests';
-
 async function loadPendingCamps() {
-  const res = await fetch('http://localhost:5000/api/admin/camp-requests');
+  const res = await fetch('http://52.66.132.71:5050/api/admin/camp-requests');
   const camps = await res.json();
   const tbody = document.querySelector('#pending-camps tbody');
   tbody.innerHTML = camps.map(c => `
@@ -19,14 +17,14 @@ async function loadPendingCamps() {
 }
 
 async function approve(id) {
-  const res = await fetch(`http://localhost:5000/api/admin/camp-requests/${id}/approve`, { method: 'POST' });
+  const res = await fetch(`http://52.66.132.71:5050/api/admin/camp-requests/${id}/approve`, { method: 'POST' });
   const data = await res.json();
   showMessage(data.message, res.ok ? 'success' : 'error');
   loadPendingCamps();
 }
 
 async function remove(id) {
-  const res = await fetch(`http://localhost:5000/api/admin/camp-requests/${id}`, { method: 'DELETE' });
+  const res = await fetch(`http://52.66.132.71:5050/api/admin/camp-requests/${id}`, { method: 'DELETE' });
   const data = await res.json();
   showMessage(data.message, res.ok ? 'success' : 'error');
   loadPendingCamps();
