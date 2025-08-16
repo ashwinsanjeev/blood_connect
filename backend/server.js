@@ -11,7 +11,7 @@ const adminCampRoutes = require('./routes/adminCampRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'http://52.66.132.71:5050', 
+  origin: 'http://52.66.132.71:3030', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
