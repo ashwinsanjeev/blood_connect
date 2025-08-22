@@ -139,6 +139,12 @@ function updateProfileMenu() {
   const token = localStorage.getItem('token');
   const profileMenu = document.getElementById('profileMenu');
 
+  if(!profileMenu)
+  {
+    console.warn("profileMenu element not found on this page");
+    return;
+  }
+
   if (token) {
     const payload = JSON.parse(atob(token.split('.')[1]));
     profileMenu.innerHTML = `
