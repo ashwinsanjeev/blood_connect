@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', checkAuth);
+
 async function handleSignup() {
     const userData = {
         username: document.getElementById('signup-username').value.trim(),
@@ -166,4 +168,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Run on initial page load
-document.addEventListener('DOMContentLoaded', checkAuth);
