@@ -11,7 +11,7 @@ const adminCampRoutes = require('./routes/adminCampRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'http://52.66.132.71:3030', 
+  origin: 'http://bloodconnect.duckdns.org', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
