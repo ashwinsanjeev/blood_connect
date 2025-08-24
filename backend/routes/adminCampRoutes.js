@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
 const {getPendingCampRequests, approveCampRequest, deleteCampRequest} = require('../models/campRequestModels');

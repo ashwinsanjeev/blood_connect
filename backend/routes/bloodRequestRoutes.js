@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 const { createBloodRequest } = require('../models/bloodRequestModels');
 const { findDonors } = require('../models/donorModels');
 const router = express.Router(); 
+require('dotenv').config();
 
 router.post('/', async (req, res) => {
   const { name, bloodgroup, email, contact, city } = req.body;
