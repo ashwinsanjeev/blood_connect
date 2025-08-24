@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/ashwin
-            echo "env=${{ secrets.env }}" > .env
+            echo "${{ secrets.env }}" > .env
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/bloodconnect-frontend:latest
             sudo docker pull ${{ secrets.DOCKERHUB_USERNAME }}/bloodconnect-backend:latest
             sudo docker-compose down
