@@ -11,7 +11,7 @@ const adminCampRoutes = require('./routes/adminCampRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'http://bloodconnect.duckdns.org', 
+  origin: 'https://bloodconnect.duckdns.org', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
@@ -26,4 +26,4 @@ app.use('/api/admin/camp-requests', adminCampRoutes);
 
 
 app.get('/', (req, res) => res.send('Blood Donor Backend')); 
-app.listen(process.env.PORT, () => console.log(`Server running on http://localhost:${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`Server running on https://localhost:${process.env.PORT}`));

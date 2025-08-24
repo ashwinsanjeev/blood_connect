@@ -24,7 +24,7 @@ async function handleSignup() {
     }
 
     try {
-        const response = await fetch('http://api-bloodconnect.duckdns.org/api/auth/signup', {
+        const response = await fetch('https://api-bloodconnect.duckdns.org/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
@@ -64,7 +64,7 @@ async function handleLogin() {
     }
 
     try {
-        const response = await fetch('http://api-bloodconnect.duckdns.org/api/auth/login', {
+        const response = await fetch('https://api-bloodconnect.duckdns.org/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })

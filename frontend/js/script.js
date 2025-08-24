@@ -54,7 +54,7 @@ async function handleSignup() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/auth/signup', {
+        const response = await fetch('https://localhost:5000/api/auth/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(userData)
@@ -94,7 +94,7 @@ async function handleLogin() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch('https://localhost:5000/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -145,7 +145,7 @@ async function registerDonor() {
     }
     try {
         // Send data to the backend
-        const response = await fetch('http://localhost:5000/api/donors', {
+        const response = await fetch('https://localhost:5000/api/donors', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(donorData),
@@ -212,7 +212,7 @@ async function bloodRequest() {
         requestButton.disabled = true;
         requestButton.textContent = 'Requesting...';
         // Send data to backend
-        const response = await fetch('http://localhost:5000/api/request-blood', {
+        const response = await fetch('https://localhost:5000/api/request-blood', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestData),
@@ -263,7 +263,7 @@ async function campRequest() {
     }
 
     try {
-        const response = await fetch('http://api-bloodconnect.duckdns.org/api/organize-camp', {
+        const response = await fetch('https://api-bloodconnect.duckdns.org/api/organize-camp', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(campData),
@@ -298,7 +298,7 @@ async function searchDonors() {
 
     try {
         // Send query to backend
-        const response = await fetch(`http://localhost:5000/api/donors?bloodgroup=${bloodgroup}&city=${city}`);
+        const response = await fetch(`https://localhost:5000/api/donors?bloodgroup=${bloodgroup}&city=${city}`);
         
         if (!response.ok) {
             throw new Error('Failed to fetch donor data');

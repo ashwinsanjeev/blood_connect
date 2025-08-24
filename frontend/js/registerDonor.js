@@ -33,7 +33,7 @@ async function registerDonor() {
     }
     try {
         // Send data to the backend
-        const response = await fetch('http://api-bloodconnect.duckdns.org/api/donors', {
+        const response = await fetch('https://api-bloodconnect.duckdns.org/api/donors', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(donorData),
