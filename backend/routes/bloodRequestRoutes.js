@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com', port: 587, secure: false,
-      auth: { user: "ashwinsanjeev33@gmail.com", pass: "ykji ceoa ecbj dhdc" }
+      auth: { user: process.env.EMAIL, pass: process.env.PASSWORD }
     });
     for (const donor of donors) {
       await transporter.sendMail({
