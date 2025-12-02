@@ -48,7 +48,7 @@ async function bloodRequest() {
         requestButton.disabled = true;
         requestButton.textContent = 'Requesting...';
         // Send data to backend
-        const response = await fetch('https://api-bloodconnect.duckdns.org/api/request-blood', {
+        const response = await fetch('http://13.233.17.238:5050/api/request-blood', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestData),
