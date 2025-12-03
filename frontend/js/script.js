@@ -263,7 +263,7 @@ async function campRequest() {
     }
 
     try {
-        const response = await fetch('http://13.233.17.238:5050/api/organize-camp', {
+        const response = await fetch('http://api-bloodconnect.duckdns.org/api/organize-camp', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(campData),
